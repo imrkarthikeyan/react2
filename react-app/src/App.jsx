@@ -7,7 +7,6 @@ function App() {
 
   return (
     <>
-      <Id_cardList/>
       <CourseList/>
     </>
   )

@@ -1,10 +1,9 @@
 
-const course1="HTML"
 
 function Course(props){
 
     return(
-        <div className="card">
+        props.name && <div className="card">
             <img src={props.image} alt="" />
             <h3>{props.name}</h3>
             <p>{props.price}</p>
@@ -13,10 +12,5 @@ function Course(props){
     )
 }
 
-Course.defaultProps={
-    name : "Name",
-    price : 1000,
-    rating : 1
-}
 
 export default Course

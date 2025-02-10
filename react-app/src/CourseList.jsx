@@ -5,33 +5,41 @@ import Course from './Course';
 function CourseList(){
     const courses=[
         {
+            id:1,
             name:"Surya P", 
-            price:"1100", 
+            price:199, 
             image:ksrct2, 
             rating:5
         },
         {
+            id:2,
             name:"Karthikeyan R", 
-            price:"1200", 
+            price:199, 
             image:ksrct, 
             rating:2
         },
         {
+            id:3,
             name:"Dileep s", 
-            price:"1500", 
+            price:499, 
             image:ksrct, 
             rating:4
         },
         {
+            id:4,
             name:"Siraj DGP", 
-            price:"2500", 
+            price:"999", 
             image:ksrct2, 
             rating:5
         }
     ]
 
-    const coursesList=courses.map(
-        (course) => <Course name={course.name} price={course.price} image={course.image} rating={course.rating} />
+    courses.sort((x,y)=>(y.price-x.price))
+
+    const vfscourses=courses.filter((course)=>course.price<200)
+
+    const coursesList=vfscourses.map(
+        (course,index) => <Course key={index} name={course.name} price={course.price} image={course.image} rating={course.rating} />
     )
 
     return(

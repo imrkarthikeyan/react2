@@ -5,6 +5,7 @@ import rk from './assets/rk.jpg'
 function Id_cardList(){
     const idcards=[
         {
+            kid:1,
             name:"KARTHIKEYAN R", 
             dept:"B.TECH(IT)", 
             year:"2023-2027", 
@@ -12,6 +13,7 @@ function Id_cardList(){
             image:rk
         },
         {
+            kid:2,
             name:"SIRAJ DSP", 
             dept:"B.TECH(CSE)", 
             year:"2023-2027", 
@@ -19,6 +21,7 @@ function Id_cardList(){
             image:rk
         },
         {
+            kid:3,
             name:"LEO DOS S", 
             dept:"BE(CSE)", 
             year:"2022-2026", 
@@ -27,7 +30,7 @@ function Id_cardList(){
     ]
 
     const allidcards=idcards.map(
-        (idcard) => <Id_card name={idcard.name} dept={idcard.dept} year={idcard.year} id={idcard.id} image={idcard.image} />
+        (idcard) => <Id_card key={idcard.kid} name={idcard.name} dept={idcard.dept} year={idcard.year} id={idcard.id} image={idcard.image} />
     )
 
     return(
