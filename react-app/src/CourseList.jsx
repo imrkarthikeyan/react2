@@ -34,11 +34,11 @@ function CourseList(){
         }
     ]
 
-    courses.sort((x,y)=>(y.price-x.price))
+    //courses.sort((x,y)=>(y.price-x.price))
 
-    const vfscourses=courses.filter((course)=>course.price<200)
+    //const vfscourses=courses.filter((course)=>course.price<200)
 
-    const coursesList=vfscourses.map(
+   const coursesList=courses.map(
         (course,index) => <Course key={index} name={course.name} price={course.price} image={course.image} rating={course.rating} />
     )
 
