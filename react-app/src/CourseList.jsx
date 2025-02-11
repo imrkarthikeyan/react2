@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import ksrct from './assets/ksrct.png'
 import ksrct2 from './assets/ksrct2.png'
 import Course from './Course';
 
 function CourseList(){
-    const courses=[
+    const [courses, setCourses]=useState([
         {
             id:1,
             name:"Surya P", 
@@ -32,14 +33,20 @@ function CourseList(){
             image:ksrct2, 
             rating:5
         }
-    ]
+    ]);
+
+    function handleDelete(id){
+        console.log("delete");
+        const newCourses=courses.filter((course) => course.id != id);
+        setCourses(newCourses);
+    }
 
     //courses.sort((x,y)=>(y.price-x.price))
 
     //const vfscourses=courses.filter((course)=>course.price<200)
 
    const coursesList=courses.map(
-        (course,index) => <Course key={index} name={course.name} price={course.price} image={course.image} rating={course.rating} />
+        (course) => <Course key={course.id} name={course.name} price={course.price} image={course.image} rating={course.rating} delete={handleDelete} id={course.id} />
     )
 
     return(
