@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ksrct from './assets/ksrct.png'
 import ksrct2 from './assets/ksrct2.png'
 import Course from './Course';
@@ -35,6 +35,13 @@ function CourseList(){
         }
     ]);
 
+    const [dummy, setDummy]=useState(true);
+
+    useEffect(()=>{
+        console.log("use effect called");
+        console.log(dummy);
+    },[dummy]);   // []
+
     function handleDelete(id){
         console.log("delete");
         const newCourses=courses.filter((course) => course.id != id);
@@ -52,6 +59,7 @@ function CourseList(){
     return(
         <>
             {coursesList}
+            <button onClick={() => setDummy(false)}>Dummy button</button>
         </>
     )
 

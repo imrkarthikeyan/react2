@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 function Course(props){
@@ -12,9 +12,8 @@ function Course(props){
         console.log(props.name, "purchased with", amt, "% discount");
         setPurchased(true);
         setDiscount(discount-amt);
-        console.log(purchased);
     }
-
+    
     return(
         props.name && <div className="card">
             <img src={props.image} alt="" />
