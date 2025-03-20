@@ -1,13 +1,15 @@
+import { useState } from 'react'
 import './App.css'
-import Course from './Course';
-import CourseList from './CourseList';
-import Id_cardList from './Id_cardList';
 
 function App() {
-
+  const[score,setScore]=useState(0);
   return (
     <>
-      <CourseList/>
+      <div className='style'>
+        <h2>Current Score:{score}</h2>
+        <button onClick={()=>setScore(score+1)}>Increase</button>
+        <button onClick={()=>setScore(score-1)}>Decrease</button>
+      </div>
     </>
   )
 }
